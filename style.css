@@ -1,20 +1,20 @@
-/* Global Styles */
+/* -------------------- Global -------------------- */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to top, #a0e6a0, #dff8e0); /* soft sky gradient */
+    background: linear-gradient(to top, #a0e6a0, #dff8e0);
     overflow-x: hidden;
     position: relative;
 }
 
-/* Navbar */
+/* ------------------- Navbar ------------------- */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    padding: 10px 15px;
     background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 10;
@@ -23,7 +23,7 @@ nav {
 nav .logo {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 16px;
     color: #2a7f62;
 }
 
@@ -35,7 +35,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 nav ul li a {
@@ -49,18 +49,17 @@ nav ul li a:hover {
     color: #14532d;
 }
 
-/* Mobile Menu */
 #mobile-menu {
     display: none;
-    font-size: 28px;
+    font-size: 24px;
     cursor: pointer;
     color: #2a7f62;
 }
 
-/* Hero Section */
+/* ------------------- Hero Section ------------------- */
 .hero {
     text-align: center;
-    margin: 50px auto 30px auto;
+    margin: 40px auto 20px auto;
     color: #14532d;
     padding: 0 15px;
 }
@@ -68,35 +67,35 @@ nav ul li a:hover {
 .hero h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 36px;
-    margin-bottom: 15px;
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 16px;
 }
 
-/* Sun Animation */
+/* ------------------- Sun Animation ------------------- */
 .sun-container {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 20px;
+    right: 20px;
     z-index: 0;
 }
 
 .sun {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background: radial-gradient(circle at 50% 50%, #FFD700, #FFA500);
     border-radius: 50%;
-    box-shadow: 0 0 50px 15px rgba(255, 215, 0, 0.6);
+    box-shadow: 0 0 40px 10px rgba(255, 215, 0, 0.6);
     animation: sunGlow 6s infinite alternate, sunRotate 20s linear infinite;
 }
 
 @keyframes sunGlow {
-    0% { box-shadow: 0 0 40px 10px rgba(255, 215, 0, 0.5); }
-    50% { box-shadow: 0 0 60px 20px rgba(255, 223, 0, 0.7); }
-    100% { box-shadow: 0 0 40px 10px rgba(255, 215, 0, 0.5); }
+    0% { box-shadow: 0 0 30px 8px rgba(255, 215, 0, 0.5); }
+    50% { box-shadow: 0 0 50px 15px rgba(255, 223, 0, 0.7); }
+    100% { box-shadow: 0 0 30px 8px rgba(255, 215, 0, 0.5); }
 }
 
 @keyframes sunRotate {
@@ -104,11 +103,11 @@ nav ul li a:hover {
     to { transform: rotate(360deg); }
 }
 
-/* Flip Card */
+/* ------------------- Flip Card ------------------- */
 .flip-card {
     background-color: transparent;
-    width: 100%;
-    max-width: 450px;
+    width: 95%;
+    max-width: 400px;
     margin: 20px auto;
     perspective: 1000px;
 }
@@ -130,11 +129,10 @@ nav ul li a:hover {
     backface-visibility: hidden;
 }
 
-/* Card Styling */
 .weather-card, .flip-card-front, .flip-card-back {
     background: #ffffffcc;
     border-radius: 20px;
-    padding: 25px 20px;
+    padding: 20px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     color: #14532d;
     text-align: center;
@@ -145,10 +143,10 @@ nav ul li a:hover {
     transform: rotateY(180deg);
 }
 
-/* Form Inputs */
+/* ------------------- Form Inputs ------------------- */
 input[type="text"], select {
-    width: 80%;
-    padding: 10px 15px;
+    width: 100%;
+    padding: 10px 12px;
     margin: 10px 0;
     border-radius: 10px;
     border: 1px solid #2a7f62;
@@ -161,15 +159,17 @@ label {
     margin-top: 10px;
 }
 
-/* Buttons */
+/* ------------------- Buttons ------------------- */
 button, .btn {
     display: inline-block;
-    padding: 10px 20px;
+    width: 90%;
+    max-width: 250px;
+    padding: 10px 15px;
     background: #2a7f62;
     color: #fff;
     border-radius: 10px;
     font-weight: 500;
-    margin: 10px 5px;
+    margin: 10px 0;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -180,65 +180,27 @@ button:hover, .btn:hover {
     transform: scale(1.05);
 }
 
-/* Footer */
+/* ------------------- Footer ------------------- */
 footer {
     text-align: center;
-    margin-top: 50px;
-    padding: 20px;
+    margin-top: 30px;
+    padding: 15px;
     color: #14532d;
 }
 
-/* Responsive */
+/* ------------------- Mobile ------------------- */
 @media (max-width: 768px) {
     nav ul {
         display: none;
         flex-direction: column;
         background: rgba(255, 255, 255, 0.95);
         position: absolute;
-        top: 60px;
+        top: 50px;
         right: 0;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    #mobile-menu {
-        display: block;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    input[type="text"], select {
-        width: 90%;
-    }
-}
-/* Mobile Menu */
-#mobile-menu {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: #2a7f62;
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background: rgba(255, 255, 255, 0.95);
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        padding: 10px 0;
+        width: 180px;
+        padding: 5px 0;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        border-radius: 8px;
         z-index: 20;
     }
 
@@ -246,12 +208,33 @@ footer {
         display: flex;
     }
 
+    nav ul li {
+        margin: 8px 0;
+        text-align: center;
+    }
+
     #mobile-menu {
         display: block;
     }
 
-    nav ul li {
-        margin: 10px 0;
-        text-align: center;
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    input[type="text"], select {
+        width: 95%;
+    }
+
+    .flip-card {
+        width: 95%;
+        max-width: 350px;
+    }
+
+    .btn {
+        width: 100%;
     }
 }
