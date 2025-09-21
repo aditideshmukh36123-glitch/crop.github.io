@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction Results</title>
+    <link rel="stylesheet" href="diseaseResult.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Sun -->
+    <div class="sun-container">
+        <div class="sun"></div>
+    </div>
+
+    <!-- Animated Grass -->
+    <div class="grass"></div>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Smart Farming</div>
+        <ul class="nav-links">
+            <li><a href="index.html">← Back to Home</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <section class="results-section">
+        <h2>Disease Prediction Results</h2>
+        <div id="result-container" class="result-card"></div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const data = JSON.parse(localStorage.getItem("diseasePrediction"));
+            const container = document.getElementById("result-container");
+
+            if (data) {
+                container.innerHTML = `
+                    <h3>Location: ${data.city}</h3>
+                    <p><strong>Selected Crop:</strong> ${data.crop}</p>
+                    <p><strong>Temperature:</strong> ${data.temp} °C</p>
+                    <p><strong>Humidity:</strong> ${data.humidity} %</p>
+                    <p><strong>Condition:</strong> ${data.description}</p>
+                    <hr>
+                    <h3>Predicted Disease Risk</h3>
+                    ${data.diseaseHtml || "<p>No major disease risk detected for the selected crop and current weather.</p>"}
+                `;
+
+                // Animate each disease-card with stagger effect
+                const cards = container.querySelectorAll('.disease-card');
+                cards.forEach((card, index) => {
+                    card.style.animationDelay = `${index * 0.3}s`;
+                });
+            } else {
+                container.innerHTML = `
+                    <p>No prediction data found.</p>
+                    <a href="index.html" class="btn">Go Back</a>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

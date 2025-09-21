@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather & Disease Prediction</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Animated Sun & Grass -->
+  <div class="sun-container">
+    <div class="sun"></div>
+  </div>
+  <div class="grass"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Weather & Disease Prediction</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+    <div id="mobile-menu">&#9776;</div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Smart Farming Assistant</h1>
+    <p>Get live weather updates and predict possible crop diseases</p>
+  </section>
+
+  <!-- Weather & Crop Card -->
+  <section>
+    <div class="flip-card" id="weather-card">
+      <div class="flip-card-inner">
+        <!-- Front -->
+        <div class="flip-card-front weather-card">
+          <h2 id="weather-status">Fetching your location...</h2>
+          <div id="weather-result"></div>
+
+          <!-- Crop Selection -->
+          <form id="crop-form">
+            <label for="crop">Select Crop:</label>
+            <select id="crop">
+                <option value="">--Select Crop--</option>
+                <option value="Wheat">Wheat</option>
+                <option value="Barley">Barley</option>
+                <option value="Tomato">Tomato</option>
+                <option value="Potato">Potato</option>
+                <option value="Rice">Rice</option>
+                <option value="Grapes">Grapes</option>
+                <option value="Apple">Apple</option>
+                <option value="Maize">Maize</option>
+                <option value="Corn">Corn</option>
+                <option value="Cucumber">Cucumber</option>
+                <option value="Pumpkin">Pumpkin</option>
+                <option value="Strawberry">Strawberry</option>
+            </select>
+          </form>
+
+          <!-- Buttons -->
+          <div class="button-group">
+            <button id="manual-btn" class="btn">Enter Location Manually</button>
+            <button id="predict-btn" class="btn" style="display:none;">Predict Disease</button>
+          </div>
+        </div>
+
+        <!-- Back (Manual input) -->
+        <div class="flip-card-back weather-card">
+          <h2>Enter Your Location</h2>
+          <form id="weather-form">
+            <input type="text" id="location" placeholder="Enter city name" required>
+            <button type="submit" class="btn">Get Weather</button>
+          </form>
+          <button id="back-btn" class="btn">Back</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy;2025 Aditi Deshmukh</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="weatherDiseases.js"></script>
+  <script src="main.js"></script>
+  <script src="weather.js"></script>
+</body>
+</html>
